@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="view_master_data_form" model="ir.ui.view">
+            <field name="name">master.product.views</field>
+            <field name="model">master.product</field>
+            <field name="arch" type="xml">
+                <form string="Master Data">
+                   <sheet>
+                       <group>
+                         <field name="name" />
+                         <field name="code"/>
+                         <field name="type" />
+                         <field name="buy_price"/>
+                         <field name="partner_id"/>
+                       </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="view_master_data_list" model="ir.ui.view">
+            <field name="name">master.product.list</field>
+            <field name="model">master.product</field>
+            <field name="arch" type="xml">
+                <tree string="Chart of accounts">
+                    <field name="name" />
+                    <field name="code"/>
+                    <field name="type" />
+                    <field name="buy_price"/>
+                    <field name="partner_id"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="view_master_data_search" model="ir.ui.view">
+            <field name="name">master.product.search</field>
+            <field name="model">master.product</field>
+            <field name="arch" type="xml">
+                <search string="Master Data">
+                    <field name="name" filter_domain="[('name','ilike',self)]" string="Name"/>
+                    <filter string="Fabric" name="type_fabric" domain="[('type','=','fabric')]"/>
+                    <filter string="Jeans" name="type_jeans" domain="[('type','=','jeans')]"/>
+                    <filter string="Cotton" name="type_cotton" domain="[('type','=','cotton')]"/>
+                </search>
+            </field>
+        </record>
+
+        <record id="action_master_data_form" model="ir.actions.act_window">
+            <field name="name">Master Data</field>
+            <field name="res_model">master.product</field>
+            <field name="view_mode">tree,form</field>
+            <field name="search_view_id" ref="view_master_data_search"/>
+            <field name="view_id" ref="view_master_data_list"/>
+            <field name="help" type="html">
+              <p class="o_view_nocontent_smiling_face">
+                Add a new product
+              </p><p>
+                This page to add Master data product in your system
+              </p>
+            </field>
+        </record>
+
+        <menuitem name="Keda Tech"
+            id="menu_keda_tech"
+            groups="base.group_user"
+            sequence="25"/>
+
+        <menuitem id="menu_keda_tech_master_data"
+            action="action_master_data_form" name="Master Data"
+            parent="kedatech.menu_keda_tech"  groups="base.group_user" sequence="1"/>
+
+    </data>
+</odoo>

@@ -1,0 +1,168 @@
+{
+	"info": {
+		"_postman_id": "622dd70d-3706-4922-8466-8b5ea9d7efbe",
+		"name": "Kedatech",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "32937701"
+	},
+	"item": [
+		{
+			"name": "Get Product",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "Update Product",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {
+					"accept-encoding": true,
+					"accept": true,
+					"user-agent": true,
+					"host": true
+				}
+			},
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "name",
+							"value": "Baju Lebaran Premium",
+							"type": "text"
+						},
+						{
+							"key": "code",
+							"value": "0001",
+							"type": "text"
+						},
+						{
+							"key": "type",
+							"value": "cotton",
+							"type": "text"
+						},
+						{
+							"key": "buy_price",
+							"value": "1000",
+							"type": "text"
+						},
+						{
+							"key": "partner_id",
+							"value": "1",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8008/kedatech/data/update/0001",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8008",
+					"path": [
+						"kedatech",
+						"data",
+						"update",
+						"0001"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Product",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {
+					"accept-encoding": true,
+					"accept": true,
+					"user-agent": true,
+					"host": true
+				}
+			},
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "name",
+							"value": "Baju Lebaran",
+							"type": "text"
+						},
+						{
+							"key": "code",
+							"value": "00001",
+							"type": "text"
+						},
+						{
+							"key": "type",
+							"value": "cotton",
+							"type": "text"
+						},
+						{
+							"key": " buying_price",
+							"value": "1700",
+							"type": "text"
+						},
+						{
+							"key": "partner_id",
+							"value": "1",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8008/kedatech/data/create",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8008",
+					"path": [
+						"kedatech",
+						"data",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Product",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": []
+				},
+				"url": {
+					"raw": "http://localhost:8008/kedatech/data/delete/0001",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8008",
+					"path": [
+						"kedatech",
+						"data",
+						"delete",
+						"0001"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
